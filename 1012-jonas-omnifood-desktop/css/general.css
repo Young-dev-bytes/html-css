@@ -98,7 +98,26 @@ body {
   display: grid;
   column-gap: 6.4rem;
   row-gap: 9.6rem;
+
+  /* margin-bottom: 9.6rem; */
 }
+/* .grid:last-child {
+  margin-bottom: 0;
+} */
+
+/* using this instead of 
+margin-bottom: 9.6rem; 
+.grid:last-child {
+  margin-bottom: 0;
+
+very intelligent trick
+ */
+.grid:not(:last-child) {
+  margin-bottom: 9.6rem;
+}
+/* .grid:not(:last-child) {
+  margin-bottom: 9.6rem;
+} */
 .grid--2-cols {
   grid-template-columns: repeat(2, 1fr);
 }
@@ -147,12 +166,8 @@ body {
   letter-spacing: 0.75;
 }
 
-/* small trick */
-.margin-right-small {
-  margin-right: 1.6rem !important;
-}
-
 /* -----btn start ----- */
+.btn,
 .btn:link,
 .btn:visited {
   display: inline-block;
@@ -163,8 +178,8 @@ body {
   border-radius: 9px;
   cursor: pointer;
 
-  transition: background-color 0.3s;
-  /* transition: all 0.3s; */
+  /* transition: background-color 0.3s; */
+  transition: all 0.3s;
 }
 .btn--full:link,
 .btn--full:visited {
@@ -186,4 +201,89 @@ body {
   /* padding: 3px solid #fff; */
   box-shadow: inset 0 0 0 3px #fff;
 }
+
+.btn--form {
+  background-color: #45260a;
+  color: #fdf2e9;
+  align-self: end;
+  padding: 1.1rem;
+  border: none;
+}
+
+.btn--form:hover {
+  background-color: #fff;
+  color: #555;
+}
 /* -----btn end ----- */
+
+/* list */
+.list {
+  list-style: none;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+.list-item {
+  font-size: 1.8rem;
+  line-height: 1.2;
+
+  display: flex;
+  gap: 1.6rem;
+}
+/* list icon */
+.list-icon {
+  width: 3rem;
+  height: 3rem;
+  color: #e67e22;
+}
+
+/* a link */
+.link:link,
+.link:visited {
+  display: inline-block;
+  color: #e67e22;
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 2px;
+  transition: all 0.3s;
+}
+.link:hover,
+.link:active {
+  color: #cf711f;
+  border-bottom: 1px solid transparent;
+}
+
+/* small trick */
+.margin-bottom-md {
+  margin-bottom: 4.8rem !important;
+}
+.margin-right-small {
+  margin-right: 1.6rem !important;
+}
+.center-text {
+  text-align: center;
+}
+strong {
+  font-weight: 500;
+}
+
+.feature-icon {
+  color: #e67e22;
+  width: 3.2rem;
+  height: 3.2rem;
+  background-color: #fdf2e9;
+  padding: 1.6rem;
+  border-radius: 50%;
+  margin-bottom: 3.2rem;
+}
+.feature-title {
+  font-size: 2.4rem;
+  color: #333;
+  font-weight: 700;
+  margin-bottom: 1.6rem;
+}
+.feature-text {
+  font-size: 1.8rem;
+  line-height: 1.8;
+}
