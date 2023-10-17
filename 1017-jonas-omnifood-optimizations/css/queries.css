@@ -61,6 +61,7 @@
   /* section header mobile naviagation */
   .btn-mobile-nav {
     display: block;
+    z-index: 9999;
   }
 
   .icon-mobile-nav[name="menu-outline"] {
@@ -84,7 +85,7 @@
 
     /* animation */
     backdrop-filter: blur(5px);
-    transition: all 1s ease-in;
+    transition: all 0.5s ease-in;
     transform: translateX(100%);
 
     /* hidden elemeny */
