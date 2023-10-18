@@ -10,7 +10,29 @@ btnMobileNavEle.addEventListener("click", () => {
   headerEl.classList.toggle("nav-open");
 });
 
-///////////////////////////////////////////////////////////
+//sticky navigation
+const sectionHeroEle = document.querySelector(".section-hero");
+const obs = new IntersectionObserver(
+  (entries) => {
+    const ent = entries[0];
+    console.log(ent);
+    if (!ent.isIntersecting) {
+      document.body.classList.add("sticky");
+    }
+    if (ent.isIntersecting) {
+      document.body.classList.remove("sticky");
+    }
+  },
+  {
+    root: null,
+    threshold: 0,
+    rootMargin: "-100px",
+  }
+);
+obs.observe(sectionHeroEle);
+//
+
+/////////////////////////////////////////////
 // Fixing flexbox gap property missing in some Safari versions
 function checkFlexGap() {
   var flex = document.createElement("div");
